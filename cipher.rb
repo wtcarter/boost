@@ -4,7 +4,10 @@ encrypted_text = 'knlfgnb, sj koqj o yvnewju'
 
 def decrypt(s, cipher)
   # Uses substitution cipher to decripts given string
-  s.chars.each { |ch| print(!!(c = cipher.index(ch)) ? CONSTANT[c] : ch ) }
+  return s.chars.map { |ch| !!(c = cipher.index(ch)) ? CONSTANT[c] : ch }.join("")
 end
 
-decrypt(encrypted_text, cipher)
+expected = "houston, we have a problem"
+result = decrypt(encrypted_text, cipher)
+puts "Result: #{result}"
+puts "This is wrong.  Should be '#{expected}'" unless result != expected 

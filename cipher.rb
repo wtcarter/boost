@@ -10,4 +10,4 @@ end
 expected = "houston, we have a problem"
 result = decrypt(encrypted_text, cipher)
 puts "Result: #{result}"
-puts "This is wrong.  Should be '#{expected}'" unless result != expected 
+puts "This is wrong.  Should be '#{expected}'" unless result == expected 
